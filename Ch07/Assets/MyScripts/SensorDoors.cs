@@ -4,6 +4,7 @@ using System.Collections;
 public class SensorDoors : MonoBehaviour {
     public AnimationClip clipOpen;
     public AnimationClip clipClose;
+    //public SmoothFollow follow;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,8 @@ public class SensorDoors : MonoBehaviour {
             animation.Play(clipOpen.name);
             audio.Play();
         }
+        //follow.distance = 1.15f;
+        //follow.height = 0.5f;
     }
 
     void OnTriggerExit(Collider defender)
@@ -31,6 +34,8 @@ public class SensorDoors : MonoBehaviour {
             animation.Play(clipClose.name);
             audio.Play();
         }
+        //follow.distance = 2.8f;
+        //follow.height = 1.8f;
     }
 
 }
