@@ -6,7 +6,7 @@ public class HideAtStart : MonoBehaviour {
     // Used in this game for: the game has two play areas/levels, Garden 1 and Staging Area. The game begins with the 
 	// Uses this to hide the Garden 1 object on game start
 	void Start () {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
 	}
 	
 	// Update is called once per frame

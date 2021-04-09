@@ -51,6 +51,7 @@
      <Compile Include="Assets\MyScripts\OccluderManager.cs" />
      <Compile Include="Assets\MyScripts\SensorDoors.cs" />
      <Compile Include="Assets\MyScripts\SimpleCharacterController.cs" />
+     <Compile Include="Assets\MyScripts\SpawnBunnies.cs" />
      <Compile Include="Assets\MyScripts\TestScripts\ColliderTests.cs" />
      <Compile Include="Assets\MyScripts\TestScripts\UpdateTests.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
