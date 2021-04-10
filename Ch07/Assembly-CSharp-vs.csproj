@@ -49,6 +49,7 @@
      <Compile Include="Assets\MyScripts\DistanceDetector.cs" />
      <Compile Include="Assets\MyScripts\HideAtStart.cs" />
      <Compile Include="Assets\MyScripts\OccluderManager.cs" />
+     <Compile Include="Assets\MyScripts\PlantVeggies.cs" />
      <Compile Include="Assets\MyScripts\SensorDoors.cs" />
      <Compile Include="Assets\MyScripts\SimpleCharacterController.cs" />
      <Compile Include="Assets\MyScripts\SpawnBunnies.cs" />

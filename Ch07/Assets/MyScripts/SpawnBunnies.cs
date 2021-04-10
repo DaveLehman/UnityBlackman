@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class SpawnBunnies : MonoBehaviour {
+    public Transform bunHolder;     // parent for all the bunnies
     public GameObject zombieBunny;  //the prefab
     public Transform dropZone;      // where they go
     public int litterSize = 8;      // base number of new bunnies to add - this will be nodified, see below
@@ -54,6 +55,7 @@ public class SpawnBunnies : MonoBehaviour {
 
             // now randomize the animation starting point
             zBunny.GetComponent<Animator>().Play("Bunny Eat", 0, Random.Range(0.0f, 1.0f));
+            zBunny.transform.parent = bunHolder;
         }
             
     }
