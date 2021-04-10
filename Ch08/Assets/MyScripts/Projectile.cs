@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class Projectile : MonoBehaviour {
+    public GameObject explosion;
 
     // automatically destroy the projectile 3 seconds after creation
 	// Use this for initialization
@@ -17,6 +18,8 @@ public class Projectile : MonoBehaviour {
     // projectile is destroyed sooner if it hits something
     void OnCollisionEnter()
     {
-        Destroy(gameObject, 2f);
+        Vector3 explosionPosition = transform.position;
+        Instantiate(explosion, explosionPosition, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class ReceivedHit : MonoBehaviour {
     public GameObject gameManager;
+    public GameObject deadReplacement;
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +26,17 @@ public class ReceivedHit : MonoBehaviour {
 
     private void DestroyBun()
     {
-        Destroy(gameObject, 0.2f);
+        if(deadReplacement)
+        {
+            // get the dead replacement object's parent
+            GameObject deadParent = deadReplacement.transform.parent.gameObject;
+            // instantiate the dead replacement's parent at this object's transform
+            GameObject dead = (GameObject)Instantiate(deadParent, transform.position, transform.rotation);
+            // trigger its default animation
+            deadReplacement.GetComponent<Animator>().Play("Jump Shrink");
+            Destroy(dead, 1.0f);
+        }
+        Destroy(gameObject, 0.001f);
         gameManager.SendMessage("UpdateCount", -1, SendMessageOptions.DontRequireReceiver);
     }
 }
