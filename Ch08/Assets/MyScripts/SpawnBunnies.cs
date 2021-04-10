@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class SpawnBunnies : MonoBehaviour {
+    GameObject gameManager;
     public Transform bunHolder;     // parent for all the bunnies
     public GameObject zombieBunny;  //the prefab
     public Transform dropZone;      // where they go
@@ -25,7 +26,8 @@ public class SpawnBunnies : MonoBehaviour {
         // first drop is triple litterSize
         int initialLitterSize = litterSize * 3;
 
-        
+        gameManager = GameObject.Find("Game Manager");
+
         PopulateGardenBunnies(initialLitterSize);
 
         float tempRate = reproRate * 2; // alow extra time after initial drop
@@ -41,11 +43,12 @@ public class SpawnBunnies : MonoBehaviour {
     {
         // actual number of bunnies will be betwee .75 and 1 times the littersize
         count = Random.Range(count * 3 / 4, count + 1);
-        print("Dropping " + count + " zombie bunnes...");
+        //print("Dropping " + count + " zombie bunnes...");
         for (int i = 0; i < count; i++ )
         {
             // random drop location for each bunny
             GameObject zBunny = (GameObject)Instantiate(zombieBunny, new Vector3(Random.Range(minX, maxX), 2.0f, Random.Range(minZ, maxZ)), Quaternion.identity);
+            gameManager.SendMessage("UpdateCount", 1, SendMessageOptions.DontRequireReceiver);
             // at this point they all point the same way and run their animations in unison. Kinda creepy.
 
             // rotate them somewhere else

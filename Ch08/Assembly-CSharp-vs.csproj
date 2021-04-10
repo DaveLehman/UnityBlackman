@@ -53,6 +53,8 @@
      <Compile Include="Assets\MyScripts\PlantVeggies.cs" />
      <Compile Include="Assets\MyScripts\PotatoLauncher.cs" />
      <Compile Include="Assets\MyScripts\Projectile.cs" />
+     <Compile Include="Assets\MyScripts\ReceivedHit.cs" />
+     <Compile Include="Assets\MyScripts\ScoreKeeper.cs" />
      <Compile Include="Assets\MyScripts\SensorDoors.cs" />
      <Compile Include="Assets\MyScripts\SimpleCharacterController.cs" />
      <Compile Include="Assets\MyScripts\SpawnBunnies.cs" />
