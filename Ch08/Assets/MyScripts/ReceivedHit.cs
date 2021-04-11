@@ -4,6 +4,7 @@ using System.Collections;
 public class ReceivedHit : MonoBehaviour {
     public GameObject gameManager;
     public GameObject deadReplacement;
+    public GameObject smokePlume;
 
 	// Use this for initialization
 	void Start () {
@@ -35,6 +36,8 @@ public class ReceivedHit : MonoBehaviour {
             // trigger its default animation
             deadReplacement.GetComponent<Animator>().Play("Jump Shrink");
             Destroy(dead, 1.0f);
+            GameObject plume = (GameObject)Instantiate(smokePlume, transform.position, smokePlume.transform.rotation);
+            Destroy(plume,5f);
         }
         Destroy(gameObject, 0.001f);
         gameManager.SendMessage("UpdateCount", -1, SendMessageOptions.DontRequireReceiver);
