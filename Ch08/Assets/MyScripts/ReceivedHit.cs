@@ -5,6 +5,7 @@ public class ReceivedHit : MonoBehaviour {
     public GameObject gameManager;
     public GameObject deadReplacement;
     public GameObject smokePlume;
+    public int damage = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -18,11 +19,12 @@ public class ReceivedHit : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.tag == "Ammo")
-        {
+        // kills bunny with a simple projectile
+        //if(collision.transform.tag == "Ammo")
+        //{
             // if this object was hit by something with the tag 'ammo', process its destruction
-            DestroyBun();
-        }
+           // DestroyBun();
+        //}
     }
 
     private void DestroyBun()
@@ -41,5 +43,13 @@ public class ReceivedHit : MonoBehaviour {
         }
         Destroy(gameObject, 0.001f);
         gameManager.SendMessage("UpdateCount", -1, SendMessageOptions.DontRequireReceiver);
+    }
+
+    void Terminator(int newDamage)
+    {
+        damage += newDamage;
+        //print("Object damage " + damage);
+        if (damage > 10)
+            DestroyBun();
     }
 }
