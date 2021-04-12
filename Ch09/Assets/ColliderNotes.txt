@@ -1,0 +1,14 @@
+Colliders
+The character will not be able to go into the Raised Bed and will never get close enough to a wall to be able to interact with it. With that information, you might want to put a simple box collider on everything but the gate. The game, however, will also have plant-devouring vermin that will be dropped into the scene with physics, so two pieces (the Raised Bed and the Planter Tower) should have mesh colliders to allow the NPCs to land and move around on the visible mesh surfaces.
+
+Gate Wall - Box Collider
+Gateway - Collection of 3 Box Colliders
+Pillar Corner - Box Collider
+Planter Tower - Mesh Collider
+Raised Bed - Mesh Collider
+Walkway - Box Collider
+Walkway Center - Box Collider
+Walkway Raised - Box Collider
+Walkway Short - Box Collider
+Wall - Box Collider
+Water Spout
