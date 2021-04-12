@@ -9,7 +9,7 @@ public class SpawnBunnies : MonoBehaviour {
     public int litterSize = 8;      // base number of new bunnies to add - this will be nodified, see below
     public float reproRate = 12f;    // seconds until we get more bunnies
     internal bool canReproduce = true;    // set this to false when no more bunnies
-    public int currentBunCount = 0;
+    //public int currentBunCount = 0;
     float minX;
     float maxX;
     float minZ;
