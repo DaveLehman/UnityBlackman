@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SpawnBunnies : MonoBehaviour {
     GameObject gameManager;
+    public GameObject StorkGroup;
     public Transform bunHolder;     // parent for all the bunnies
     public GameObject zombieBunny;  //the prefab
     public Transform dropZone;      // where they go
@@ -71,7 +72,9 @@ public class SpawnBunnies : MonoBehaviour {
         float adjustedTime = Random.Range(minTime, minTime + 5);
         // having waited, make more bunnies
         //yield return new WaitForSeconds(adjustedTime); // original call, let's add drama with a stork sound
-        yield return new WaitForSeconds(adjustedTime-3f);        
+        yield return new WaitForSeconds(adjustedTime-3f);
+        StorkGroup.SetActive(true);
+        StorkGroup.SendMessage("Initialize", SendMessageOptions.DontRequireReceiver);
         audio.Play();
         yield return new WaitForSeconds(3f);
         PopulateGardenBunnies(litterSize);

@@ -24,7 +24,7 @@ public class ScoreKeeper : MonoBehaviour {
     {
         {
             currentBunCount += adjustment;
-            //print("new count " + currentBunCount);
+            print("new count " + currentBunCount);
             bunnyCounterDisplay.text = currentBunCount.ToString();
 
             if (currentBunCount == 0)
@@ -34,13 +34,14 @@ public class ScoreKeeper : MonoBehaviour {
             }
 
 
-            if (currentBunCount == 10)
-            { // stop the population explosion!
+            //if (currentBunCount == 10)
+            //{ // stop the population explosion!
+                //print("Stopping battery drain and bunny population");
                 // stop the battery drain - the threat is almost neutralized
-                GameObject.Find("Battery Life Text").GetComponent<BatteryHealth>().trackingBattery = false;
+                //GameObject.Find("Battery Life Text").GetComponent<BatteryHealth>().trackingBattery = false;
 
-                bunnySpawner.canReproduce = false;
-            }
+                //bunnySpawner.canReproduce = false;
+            //}
 
             // put a floor on how low loadRate can go
             if (launcher.loadRate < 0.2f) return;
