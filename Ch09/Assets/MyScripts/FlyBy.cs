@@ -6,8 +6,8 @@ public class FlyBy : MonoBehaviour {
         
         Vector3 startLocation;
         Vector3 endLocation;
-        float startOffset = 1200f;
-        float endOffset = -2250f;
+        float startOffset = 500f;
+        float endOffset = -3000f;
 
     void Awake()
     {

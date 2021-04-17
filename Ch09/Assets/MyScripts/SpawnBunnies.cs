@@ -4,6 +4,7 @@ using System.Collections;
 public class SpawnBunnies : MonoBehaviour {
     GameObject gameManager;
     public GameObject StorkGroup;
+    public Animator beak;
     public Transform bunHolder;     // parent for all the bunnies
     public GameObject zombieBunny;  //the prefab
     public Transform dropZone;      // where they go
@@ -76,7 +77,8 @@ public class SpawnBunnies : MonoBehaviour {
         StorkGroup.SetActive(true);
         StorkGroup.SendMessage("Initialize", SendMessageOptions.DontRequireReceiver);
         audio.Play();
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(Random.Range(1f,2f));
+        beak.SetBool("Cue the Beak",true);
         PopulateGardenBunnies(litterSize);
         // and start the Coroutine again to minTime, but only if there any left to reproduce
         if (canReproduce) StartCoroutine(StartReproducing(reproRate));
