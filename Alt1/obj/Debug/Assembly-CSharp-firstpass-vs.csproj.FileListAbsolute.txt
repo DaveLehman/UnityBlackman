@@ -1,0 +1,12 @@
+F:\terable2\Programming\Unity Absolute Beginers\Mine\Alt1\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
+F:\terable2\Programming\Unity Absolute Beginers\Mine\Alt1\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+F:\terable2\Programming\Unity Absolute Beginers\Mine\Alt1\Temp\bin\Debug\UnityEditor.dll
+F:\terable2\Programming\Unity Absolute Beginers\Mine\Alt1\Temp\bin\Debug\UnityEngine.dll
+F:\terable2\Programming\Unity Absolute Beginers\Mine\Alt1\Temp\bin\Debug\UnityEngine.UI.dll
+F:\terable2\Programming\Unity Absolute Beginers\Mine\Alt1\Temp\bin\Debug\Mono.Cecil.dll
+F:\terable2\Programming\Unity Absolute Beginers\Mine\Alt1\Temp\bin\Debug\nunit.framework.dll
+F:\terable2\Programming\Unity Absolute Beginers\Mine\Alt1\Temp\bin\Debug\Unity.DataContract.dll
+F:\terable2\Programming\Unity Absolute Beginers\Mine\Alt1\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+F:\terable2\Programming\Unity Absolute Beginers\Mine\Alt1\obj\Debug\Assembly-CSharp-firstpass-vs.csprojResolveAssemblyReference.cache
+F:\terable2\Programming\Unity Absolute Beginers\Mine\Alt1\obj\Debug\Assembly-CSharp-firstpass.dll
+F:\terable2\Programming\Unity Absolute Beginers\Mine\Alt1\obj\Debug\Assembly-CSharp-firstpass.pdb
