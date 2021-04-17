@@ -7,6 +7,8 @@ public class SpawnBunnies : MonoBehaviour {
     public GameObject zombieBunny;  //the prefab
     public Transform dropZone;      // where they go
 
+    public Animator beak;
+
     public int litterSize = 8;      // base number of new bunnies to add - this will be nodified, see below
     public float reproRate = 12f;    // seconds until we get more bunnies
     internal bool canReproduce = true;    // set this to false when no more bunnies
@@ -74,7 +76,8 @@ public class SpawnBunnies : MonoBehaviour {
         //yield return new WaitForSeconds(adjustedTime); // original call, let's add drama with a stork sound
         yield return new WaitForSeconds(adjustedTime-3f);        
         audio.Play();
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(Random.Range(1f,2f));
+        beak.SetBool("Cue the Beak Open", true);
         PopulateGardenBunnies(litterSize);
         // and start the Coroutine again to minTime, but only if there any left to reproduce
         if (canReproduce) StartCoroutine(StartReproducing(reproRate));
