@@ -7,7 +7,9 @@ public class SpawnBunnies : MonoBehaviour {
     public GameObject zombieBunny;  //the prefab
     public Transform dropZone;      // where they go
 
+    public GameObject stork;
     public Animator beak;
+    public Animator bundle;
 
     public int litterSize = 8;      // base number of new bunnies to add - this will be nodified, see below
     public float reproRate = 12f;    // seconds until we get more bunnies
@@ -69,18 +71,31 @@ public class SpawnBunnies : MonoBehaviour {
     }
 
     IEnumerator StartReproducing(float minTime)
-    {
-        // wait this much time before going on
-        float adjustedTime = Random.Range(minTime, minTime + 5);
-        // having waited, make more bunnies
-        //yield return new WaitForSeconds(adjustedTime); // original call, let's add drama with a stork sound
-        yield return new WaitForSeconds(adjustedTime-3f);        
-        audio.Play();
-        yield return new WaitForSeconds(Random.Range(1f,2f));
-        beak.SetBool("Cue the Beak Open", true);
-        PopulateGardenBunnies(litterSize);
+    {   if (canReproduce)
+        {
+            // wait this much time before going on
+            float adjustedTime = Random.Range(minTime, minTime + 5);
+            // having waited, make more bunnies
+            //yield return new WaitForSeconds(adjustedTime); // original call, let's add drama with a stork sound
+            yield return new WaitForSeconds(adjustedTime - 3f);
+            stork.SetActive(true);
+            stork.SendMessage("Initialize", SendMessageOptions.DontRequireReceiver);
+            audio.Play();
+            yield return new WaitForSeconds(Random.Range(1f, 2f));
+            beak.SetBool("Cue the Beak Open", true);
+            DropBundle();
+            PopulateGardenBunnies(litterSize);
+        }
+
         // and start the Coroutine again to minTime, but only if there any left to reproduce
         if (canReproduce) StartCoroutine(StartReproducing(reproRate));
+    }
+
+    private void DropBundle()
+    {
+        bundle.Play("Bundle Fall");     // start the fall animation
+        bundle.transform.parent = null; // remove bundle from the stork group -- it will be left behind
+        bundle.rigidbody2D.isKinematic = false;
     }
 
 }

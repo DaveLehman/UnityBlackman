@@ -46,9 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\MyScripts\BabyZBHandler.cs" />
      <Compile Include="Assets\MyScripts\BasicPotatoLauncher.cs" />
      <Compile Include="Assets\MyScripts\BatteryHealth.cs" />
+     <Compile Include="Assets\MyScripts\BundleManager.cs" />
      <Compile Include="Assets\MyScripts\DistanceDetector.cs" />
+     <Compile Include="Assets\MyScripts\FlyBy.cs" />
+     <Compile Include="Assets\MyScripts\GameMisc.cs" />
      <Compile Include="Assets\MyScripts\HideAtStart.cs" />
      <Compile Include="Assets\MyScripts\OccluderManager.cs" />
      <Compile Include="Assets\MyScripts\PlantRemover.cs" />
